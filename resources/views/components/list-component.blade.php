@@ -1,17 +1,17 @@
 <ul class="nested">
-    @foreach($fruites as $fruite)
+    @foreach($fruits as $fruit)
     <li>
         <span class="caret">
-            {{$fruite->label}} ({{$fruite->children->count()}})
+            {{$fruit->label}} 
         </span>
-        <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal{{$fruite->id}}">
+        <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal{{$fruit->id}}">
             Edit
         </button>
-        <x-edit-component :fruit="$fruite" />
+        <x-edit-component :fruit="$fruit" />
 
 
-        @if($fruite->children->count() > 0)
-        <x-list-component :id="$fruite->id" />
+        @if($fruit->children->count() > 0)
+        <x-list-component :id="$fruit->id" />
         @endif
     </li>
     @endforeach

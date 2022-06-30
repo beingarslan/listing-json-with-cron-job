@@ -5,23 +5,23 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Fruites List') }}</div>
+                <div class="card-header">{{ __('Fruits List') }}</div>
 
                 <div class="card-body">
                     <div class="accordion" id="accordionExample">
 
                         <ul id="myUL">
-                            @foreach($fruites as $fruite)
+                            @foreach($fruits as $fruit)
                             <li>
                                 <span class="caret">
-                                    {{$fruite->label}}
+                                    {{$fruit->label}}
                                 </span>
-                                <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal{{$fruite->id}}">
+                                <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal{{$fruit->id}}">
                                     Edit
                                 </button>
-                                <x-edit-component :fruit="$fruite" />
-                                @if($fruite->children->count() > 0)
-                                <x-list-component :id="$fruite->id" />
+                                <x-edit-component :fruit="$fruit" />
+                                @if($fruit->children->count() > 0)
+                                <x-list-component :id="$fruit->id" />
                                 @endif
                             </li>
                             @endforeach

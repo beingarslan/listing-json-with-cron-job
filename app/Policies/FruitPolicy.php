@@ -2,11 +2,11 @@
 
 namespace App\Policies;
 
-use App\Models\Fruite;
+use App\Models\Fruit;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class FruitePolicy
+class FruitPolicy
 {
     use HandlesAuthorization;
 
@@ -25,10 +25,10 @@ class FruitePolicy
      * Determine whether the user can view the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Fruite  $fruite
+     * @param  \App\Models\fruit  $fruit
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, Fruite $fruite)
+    public function view(User $user, Fruit $fruit)
     {
         //
     }
@@ -48,10 +48,10 @@ class FruitePolicy
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Fruite  $fruite
+     * @param  \App\Models\fruit  $fruit
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, Fruite $fruite)
+    public function update(User $user, Fruit $fruit)
     {
         //
     }
@@ -60,10 +60,10 @@ class FruitePolicy
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Fruite  $fruite
+     * @param  \App\Models\fruit  $fruit
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, Fruite $fruite)
+    public function delete(User $user, Fruit $fruit)
     {
         //
     }
@@ -72,10 +72,10 @@ class FruitePolicy
      * Determine whether the user can restore the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Fruite  $fruite
+     * @param  \App\Models\fruit  $fruit
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user, Fruite $fruite)
+    public function restore(User $user, Fruit $fruit)
     {
         //
     }
@@ -84,10 +84,10 @@ class FruitePolicy
      * Determine whether the user can permanently delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Fruite  $fruite
+     * @param  \App\Models\fruit  $fruit
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user, Fruite $fruite)
+    public function forceDelete(User $user, Fruit $fruit)
     {
         //
     }

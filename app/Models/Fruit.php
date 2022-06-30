@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Fruite extends Model
+class Fruit extends Model
 {
     use HasFactory;
 
-    protected $table = 'fruites';
+    protected $table = 'fruits';
 
     protected $fillable = [
         'id',
@@ -21,12 +21,12 @@ class Fruite extends Model
 
     public function parent()
     {
-        return $this->belongsTo(Fruite::class, 'parent_id', 'id');
+        return $this->belongsTo(Fruit::class, 'parent_id', 'id');
     }
 
     public function children()
     {
-        return $this->hasMany(Fruite::class, 'parent_id', 'id');
+        return $this->hasMany(Fruit::class, 'parent_id', 'id');
     }
 
     // map all level children

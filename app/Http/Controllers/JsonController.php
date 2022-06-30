@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Fruite;
+use App\Models\Fruit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
@@ -10,17 +10,17 @@ class JsonController extends Controller
 {
     public function index()
     {
-        $fruites = Fruite::where('parent_id', null)->orderBy('label')->get();
+        $fruits = Fruit::where('parent_id', null)->orderBy('label')->get();
        
-        return view('welcome', compact('fruites'));
+        return view('welcome', compact('fruits'));
     }
 
     public function update(Request $request)
     {
-        $fruite = Fruite::find($request->id);
-        $fruite->label = $request->label;
-        $fruite->is_edited = true;
-        $fruite->save();
+        $fruit = Fruit::find($request->id);
+        $fruit->label = $request->label;
+        $fruit->is_edited = true;
+        $fruit->save();
         return redirect()->back();
     }
 }

@@ -2,7 +2,7 @@
 
 namespace App\View\Components;
 
-use App\Models\Fruite;
+use App\Models\Fruit;
 use Illuminate\View\Component;
 
 class ListComponent extends Component
@@ -12,10 +12,10 @@ class ListComponent extends Component
      *
      * @return void
      */
-    public $fruites;
+    public $fruits;
     public function __construct($id)
     {
-        $this->fruites = Fruite::where('parent_id', $id)->with('children')->orderBy('label')->get();
+        $this->fruits = Fruit::where('parent_id', $id)->with('children')->orderBy('label')->get();
     }
 
     /**
